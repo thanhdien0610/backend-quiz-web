@@ -1,0 +1,45 @@
+@url_dev = http://localhost:3052/api/v1/participant
+@access_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJlbWFpbCI6InN5bHZlcjA3MDkxQGdtYWlsLmNvbSIsImlhdCI6MTY4MTY1NTMxMiwiZXhwIjoxNjgxODI4MTEyfQ.Pr5kxImLI37o4aoKGrIKvrEToiImFUaaUaLE7LSSyWo
+@page = 2
+@limit = 19
+
+@username = newUser
+@email = {{username}}@gmail.com
+@password = dientk12
+@role = USER
+@userImage = null
+###get users with paginate
+GET  {{url_dev}}?page={{page}}&limit={{limit}}
+Authorization: {{access_token}}
+
+
+### get all participant
+GET  {{url_dev}}/all
+Authorization: {{access_token}}
+
+### post create user
+POST {{url_dev}}
+Authorization: {{access_token}}
+Content-Type: multipart/form-data;boundary="XXX"
+
+--XXX
+Content-Disposition: form-data; name="email"
+
+{{email}}
+--XXX
+Content-Disposition: form-data; name="password"
+
+{{password}}
+--XXX
+Content-Disposition: form-data; name="username"
+
+{{username}}
+--XXX
+Content-Disposition: form-data; name="role"
+
+{{role}}
+--XXX
+Content-Disposition: form-data; name="userImage"
+
+{{userImage}}
+--XXX--

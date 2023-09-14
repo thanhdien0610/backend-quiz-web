@@ -1,0 +1,15 @@
+@url_dev = http://localhost:3052/api/v1/question
+@access_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJlbWFpbCI6InN5bHZlcjA3MDkxQGdtYWlsLmNvbSIsImlhdCI6MTY4MTY1NTMxMiwiZXhwIjoxNjgxODI4MTEyfQ.Pr5kxImLI37o4aoKGrIKvrEToiImFUaaUaLE7LSSyWo
+@param = 1
+
+//helli
+GET  {{url_dev}}
+Authorization: {{access_token}}
+
+### get all question
+GET  {{url_dev}}/all
+Authorization: {{access_token}}
+
+### get question by id
+GET  {{url_dev}}/{{param}}
+Authorization: {{access_token}}

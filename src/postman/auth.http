@@ -1,0 +1,45 @@
+### get 
+@url_dev = http://localhost:3052/api/v1
+@username = sylver07091
+@email = {{username}}@gmail.com
+@password = dientk12
+
+@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiVVNFUiIsImVtYWlsIjoidXNlckxvZ2luNUBnbWFpbC5jb20iLCJpYXQiOjE2ODE1NzExOTAsImV4cCI6MTY4MjE3NTk5MH0.TS3bagWrNjFlDCGfPSmE6rMuBzgpoJXN6_gZnMLd7Y8
+
+@role = ADMIN
+
+GET  {{url_dev}}
+
+### signup with role user
+POST  {{url_dev}}/register
+Content-Type: application/x-www-form-urlencoded
+
+username={{username}}&email={{email}}&password={{password}}
+
+### signup with role admin
+POST  {{url_dev}}/register
+Content-Type: application/x-www-form-urlencoded
+
+username={{username}}&email={{email}}&password={{password}}&role={{role}}
+
+### login 
+POST  {{url_dev}}/login
+Content-Type: application/x-www-form-urlencoded
+
+email={{email}}&password={{password}}
+
+
+### request refresh token
+POST  {{url_dev}}/refresh-token
+Content-Type: application/x-www-form-urlencoded
+
+email={{email}}&refresh_token={{refresh_token}}
+
+###log out
+POST  {{url_dev}}/logout
+Content-Type: application/x-www-form-urlencoded
+
+email={{email}}&refresh_token={{refresh_token}}
+
+###get over view
+GET   {{url_dev}}/overview
